@@ -1,0 +1,67 @@
+{
+  "name": "@shelf/xxxxxx",
+  "version": "0.0.0",
+  "description": "xxxxxx",
+  "license": "MIT",
+  "author": {
+    "name": "Vlad Holubiev",
+    "email": "vlad@shelf.io",
+    "url": "https://shelf.io"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": "./lib/index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rm -rf lib/ && tsc",
+    "coverage": "yarn test --coverage",
+    "lint": "yarn lint:ci --fix",
+    "lint:ci": "eslint . --ext .js,.ts,.json",
+    "lint:size": "size-limit",
+    "prepack": "yarn build",
+    "test": "TZ=UTC jest src",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch"
+  },
+  "lint-staged": {
+    "*.{html,md,yml}": [
+      "prettier --write"
+    ],
+    "*.{js,ts,json}": [
+      "eslint --fix"
+    ],
+    ".circleci/config.yml": [
+      ".husky/validate-circleci-config.sh"
+    ]
+  },
+  "prettier": "@shelf/prettier-config",
+  "dependencies": {},
+  "devDependencies": {
+    "@shelf/eslint-config": "3.15.1",
+    "@shelf/prettier-config": "1.0.0",
+    "@shelf/tsconfig": "0.1.0",
+    "@size-limit/preset-small-lib": "11.0.2",
+    "@swc/core": "1.3.103",
+    "@swc/jest": "0.2.29",
+    "@types/jest": "29.5.12",
+    "@types/node": "18.18.8",
+    "eslint": "8.57.0",
+    "husky": "8.0.3",
+    "jest": "29.7.0",
+    "lint-staged": "15.2.2",
+    "prettier": "3.2.5",
+    "size-limit": "11.0.2",
+    "ts-node": "10.9.2",
+    "typescript": "5.3.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

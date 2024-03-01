@@ -1,0 +1,34 @@
+orbs:
+  node: circleci/node@5.2.0
+
+version: 2.1
+
+parameters:
+  node_version:
+    type: string
+    default: '18.18.0'
+
+commands:
+  install_deps:
+    steps:
+      - node/install-packages:
+          pkg-manager: yarn
+          cache-version: v1-all
+          cache-only-lockfile: true
+          app-dir: ~/repo
+          override-ci-command: yarn install --pure-lockfile --no-progress
+
+jobs:
+  build:
+    executor:
+      name: node/default
+      tag: << pipeline.parameters.node_version >>
+    resource_class: large
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - install_deps
+      - run: yarn build
+      - run: yarn lint:ci
+      - run: yarn lint:size
+      - run: yarn coverage --maxWorkers=4

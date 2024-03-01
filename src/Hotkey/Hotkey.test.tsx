@@ -116,4 +116,20 @@ describe('<Hotkey />', () => {
 
     expect(onAction).toHaveBeenCalledTimes(3);
   });
+
+  it('should reflect hotkeys options change', () => {
+    const {rerender} = render(<Hotkey binding={'a'} onAction={onAction} />);
+
+    fireEvent.keyDown(window, {key: 'a'});
+
+    rerender(<Hotkey binding={'a'} options={{event: 'keyup'}} onAction={onAction} />);
+
+    fireEvent.keyDown(window, {key: 'a'});
+
+    expect(onAction).toHaveBeenCalledTimes(1);
+
+    fireEvent.keyUp(window, {key: 'a'});
+
+    expect(onAction).toHaveBeenCalledTimes(2);
+  });
 });

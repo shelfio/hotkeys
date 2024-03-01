@@ -2,5 +2,10 @@
   "root": true,
   "extends": [
     "@shelf/eslint-config/frontend-typescript"
-  ]
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

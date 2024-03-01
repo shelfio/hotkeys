@@ -16,6 +16,7 @@
     "type": "git",
     "url": "https://github.com/shelfio/hotkeys.git"
   },
+  "license": "MIT",
   "author": {
     "name": "Yaroslav Chapelskyi",
     "email": "slavko@shelf.io",

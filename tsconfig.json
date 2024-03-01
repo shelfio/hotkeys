@@ -1,12 +1,10 @@
 {
   "extends": "@shelf/tsconfig/frontend",
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "ESNext",
-    "moduleResolution": "node",
     "declaration": true,
-    "resolveJsonModule": false,
-    "outDir": "lib"
+    "outDir": "lib",
+    "jsx": "react-jsx",
+    "noEmit": false
   },
   "exclude": ["node_modules", "**/*.test.*", "**/*.mock.ts"],
   "include": ["src"]

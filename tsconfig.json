@@ -1,7 +1,6 @@
 {
-  "extends": "@shelf/tsconfig/backend",
+  "extends": "@shelf/tsconfig/frontend",
   "compilerOptions": {
-    "strict": true,
     "module": "ESNext",
     "target": "ESNext",
     "moduleResolution": "node",

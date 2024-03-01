@@ -2,9 +2,24 @@ import type {Config} from 'jest';
 
 const config: Config = {
   transform: {
-    '^.+\\.(t|j)sx?$': '@swc/jest',
+    '^.+\\.(t|j)sx?$': [
+      '@swc/jest',
+      {
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+          },
+          transform: {
+            react: {
+              runtime: 'automatic',
+            },
+          },
+        },
+      },
+    ],
   },
-  resetMocks: true,
+  resolver: 'ts-jest-resolver',
+  testEnvironment: 'jsdom',
   coverageThreshold: {
     global: {
       branches: 100,

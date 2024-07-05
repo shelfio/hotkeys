@@ -8,6 +8,7 @@ export type HotkeyProps = {
   element?: HTMLElement;
 };
 
+//testing purpose
 export function Hotkey(props: HotkeyProps) {
   useHotkeys({[props.binding]: props.onAction}, props.options, props.element);
 

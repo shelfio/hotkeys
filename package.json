@@ -34,7 +34,7 @@
     "build": "rm -rf lib/ && tsc",
     "coverage": "yarn test --coverage",
     "lint": "yarn lint:ci --fix",
-    "lint:ci": "eslint . --ext .js,.ts,.tsx,.json",
+    "lint:ci": "eslint .",
     "lint:size": "size-limit",
     "prepack": "yarn build",
     "test": "TZ=UTC jest src",

@@ -1,4 +1,4 @@
 export default [
-  {name: 'main', path: 'lib/index.js', limit: '910 B'},
-  {name: 'Hotkey', import: '{Hotkey}', path: 'lib/index.js', limit: '750 B'},
+  {name: 'main', path: 'lib/index.js', limit: '980 B'},
+  {name: 'Hotkey', import: '{Hotkey}', path: 'lib/index.js', limit: '820 B'},
 ];

@@ -74,7 +74,7 @@
     "size-limit": "11.2.0",
     "ts-jest-resolver": "2.0.1",
     "ts-node": "10.9.2",
-    "typescript": "5.9.3"
+    "typescript": "5.9.2"
   },
   "peerDependencies": {
     "react": "^18 || ^19"
